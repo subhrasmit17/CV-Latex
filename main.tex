@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=0.3in, right=0.3in, top=0.2in, bottom=0.2in]{geometry}
+\usepackage[left=0.2in, right=0.2in, top=0.2in, bottom=0.2in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
@@ -19,8 +19,15 @@
     BoldItalicFont = *-BoldItalic
 ]
 
+\usepackage{xcolor}
+\definecolor{skyblue}{RGB}{0, 153, 255}
+\hypersetup{
+    colorlinks=true,     
+    urlcolor=skyblue,
+}
 
-\newcommand{\sectionspacing}{\vspace{0.09em}}
+
+\newcommand{\sectionspacing}{\vspace{-0.2em}}
 
 % Section formatting with centered headings and lines
 \titleformat{\section}
@@ -29,7 +36,7 @@
   {0em}
   {}
 
-\titlespacing*{\section}{0pt}{1.5em}{0.4em}
+\titlespacing*{\section}{0pt}{1em}{0.5em}
 
 % Remove indentation
 \setlength{\parindent}{0pt}
@@ -53,22 +60,30 @@
     \href{https://github.com/subhrasmit17}{github.com/subhrasmit17} \quad | \quad \href{https://linkedin.com/in/subhrasmit}{linkedin.com/in/subhrasmit}
 \end{center}
 
-\sectionspacing
+
+
+\vspace{-0.3em} %to preverve the distance b/w subhrasmit Kar and summary while changing space b/w other sub-headings
+
+
 
 % Summary
 \section*{Summary}
-Computer Science graduate possessing strong technical skills in C, Java, and SQL, coupled with a solid understanding of Data Structures and Algorithms. Experienced in Cybersecurity and encryption model development, with foundational knowledge of C++ and front-end web development (HTML, CSS, JavaScript). Equipped with robust coding and problem-solving abilities, backed by real-world projects and continuous self-learning. Passionate about leading teams and overcoming complex technical challenges. Currently exploring Machine Learning using Python to deepen understanding of AI concepts.
+Computer Science graduate with strong technical skills in C, Java, SQL, and full-stack web development. Experienced in cybersecurity and encryption model development, with hands-on expertise in deploying web applications using Spring Boot, Maven, Docker, and Render. Equipped with robust coding and problem-solving abilities, backed by real-world projects and continuous self-learning. Passionate about leading teams and tackling complex technical challenges.
 
-\sectionspacing
+
+
+
+
 
 % Technical Skills
 \section*{Technical Skills}
-\textbf{Programming Languages:} C, Java, SQL, C++, HTML, CSS \\[0.5em]
-\textbf{Tools \& Technologies:} Git, VS Code, MySQL, OOP, DSA \\[0.5em]
+\textbf{Programming Languages:} C, Java, SQL, C++, HTML, CSS, JavaScript, LaTeX \\[0.5em]
+\textbf{Tools \& Technologies:} Git, VS Code, MySQL, IntelliJ IDEA, Postman, Spring Boot, Maven, Docker, Overleaf, OOP, DSA \\[0.5em]
 \textbf{Cybersecurity \& Cryptography:} Image Encryption Methodology, Bit-Plane Slicing, DNA Coding, Chaos Theory \\[0.5em]
 \textbf{Soft Skills:} Leadership, Problem-solving, Time Management, Communication, Adaptability, Fast Learner, Ethics
 
-\sectionspacing
+
+
 
 
 
@@ -90,29 +105,44 @@ Secondary Education \hfill Don Bosco School Bandel
 
 
 
-\sectionspacing
+
+
 
 % Projects
 \section*{Projects}
-\textbf{Image Encryption using Bit-Plane Slicing \& DNA Encoding} \hfill {\textbf{September 2024 - May 2025}}\\[0.4em]
-\vspace{-0.2em}
-Technologies Used: Java, Cryptography, Bit-Plane Slicing, DNA Encoding, Chaos Theory
+\textbf{Image Encryption using Bit-Plane Slicing \& DNA Encoding} \hfill {\textbf{September 2024 - May 2025}}\\[0.5em]
+\textbf{Technologies Used:} Java, Cryptography, Bit-Plane Slicing, DNA Encoding, Chaos Theory\hfill {\href{https://github.com/subhrasmit17/Image-Encryption-Offline}{GitHub}}
 
 \begin{itemize}[leftmargin=*]
-    \item Co-led the design and implementation of a symmetric image encryption-decryption scheme to ensure secure and reversible image transformation.
+    \item Led the design and implementation of a symmetric image encryption-decryption scheme ensuring secure and reversible image transformation.
     \item Designed a multistage encryption pipeline leveraging chaotic maps, DNA-based coding, and bit-plane slicing to maximize confusion and diffusion in image data.
-    \item Engineered a symmetric decryption process that precisely reverses each encryption step, ensuring full recovery of the original image with high fidelity.
+    \item Engineered a symmetric decryption process to precisely reverse each encryption step, ensuring lossless recovery of the original image.
     \item Achieved strong security performance with NPCR (99.62\%), UACI (34.58\%), and favorable PSNR, validating the scheme's robustness for secure image storage and transmission.
 \end{itemize}
 
 
+\vspace{0.5em}
 
-\sectionspacing
+
+\textbf{Image Encryption Web Application} \hfill {\textbf{June 2025 - Present}}\\[0.5em]
+\textbf{Technologies Used:} Spring Boot, Maven, Docker, Render, HTML, CSS, JavaScript \hfill {\href{https://github.com/subhrasmit17/Image-Encryption-Online}{GitHub}}\\[0.5em]
+Live Website: \href{https://image-encryptor-online.onrender.com}{https://image-encryptor-online.onrender.com}
+
+\begin{itemize}[leftmargin=*]
+    \item Independently developed a live web application implementing the image encryption-decryption algorithm from my previous project for real-time secure image processing via a web interface.
+    \item Built a Spring Boot backend for efficient image handling, integrated with a responsive front-end using HTML, CSS, and JavaScript for a seamless user experience.
+    \item Deployed the containerized application on Render using Docker, ensuring global accessibility with minimal cold start delays and optimized application responsiveness.
+    \item Achieved continuous deployment via GitHub-integrated auto-deploy, enabling automated updates to the web application on every code push.
+\end{itemize}
+
+
+
 
 
 
 % Internships/Training
 \section*{Internships / Training}
+\vspace{0.1em}
 \textbf{Rifle Factory Ishapore, Advanced Weapon and Equipment India Limited} \hfill {\textbf{January 2025}}\\[-1.4em]
 
 \begin{itemize}[leftmargin=*]
@@ -122,22 +152,20 @@ Technologies Used: Java, Cryptography, Bit-Plane Slicing, DNA Encoding, Chaos Th
 
 
 
-\sectionspacing
 
 
 
 % Certifications
-\section*{Certifications}
-\begin{itemize}[leftmargin=*]
-    \item The Joy of Computing Using Python \textbf{(NPTEL)}
-    \item Problem Solving Through Programming in C \textbf{(NPTEL)}
-    \item Database Management System \textbf{(Great Learning Academy)}
-    \item Programming for Everybody (Getting Started With Python) \textbf{(Coursera)}
-\end{itemize}
+% \section*{Certifications}
+% \begin{itemize}[leftmargin=*]
+%     \item The Joy of Computing Using Python \textbf{(NPTEL)}
+%     \item Problem Solving Through Programming in C \textbf{(NPTEL)}
+%     \item Database Management System \textbf{(Great Learning Academy)}
+%     \item Programming for Everybody (Getting Started With Python) \textbf{(Coursera)}
+% \end{itemize}
 
 
 
-\sectionspacing
 
 
 
