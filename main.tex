@@ -1,5 +1,5 @@
 \documentclass[a4paper,10pt]{article}
-\usepackage[left=0.2in, right=0.2in, top=0.2in, bottom=0.2in]{geometry}
+\usepackage[left=0.2in, right=0.2in, top=0.24in, bottom=0.24in]{geometry}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
@@ -10,46 +10,77 @@
 \usepackage{color}
 \usepackage{ulem}
 \usepackage{fontspec}
-\setmainfont{Tinos.ttf}[
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\usepackage{amsmath}
+
+%importing fonts
+\setmainfont{calibri.ttf}[
     Path = ./,
     Extension = .ttf,
-    UprightFont = *-Regular,
-    BoldFont = *-Bold,
-    ItalicFont = *-Italic,
-    BoldItalicFont = *-BoldItalic
+    UprightFont = *-regular,
+    BoldFont = *-bold,
+]
+\newfontfamily\headingfont{Garamond-Medium.ttf}[
+    Path = ./,
+    Extension = .ttf,
 ]
 
+%configuring colours
 \usepackage{xcolor}
-\definecolor{skyblue}{RGB}{0, 153, 255}
+\definecolor{hypertext}{RGB}{0, 120, 255}
+\definecolor{title}{RGB}{40, 40, 80}
+\definecolor{section}{RGB}{20, 20, 40}
+\definecolor{linegrey}{RGB}{180, 180, 200}
+\definecolor{generaltext}{RGB}{40, 40, 40}
+
+
+%text color for hyperlinks
 \hypersetup{
     colorlinks=true,     
-    urlcolor=skyblue,
+    urlcolor=hypertext,
 }
 
+
+%to disable hyphenated words in paragraphs
 \hyphenpenalty=10000
 \exhyphenpenalty=10000
 \sloppy
 
 
-\newcommand{\sectionspacing}{\vspace{-0.2em}}
+%specifying space between bullet points
+\setlist[itemize]{itemsep=0.25em}
 
-% Section formatting with centered headings and lines
-\titleformat{\section}
-  {\fontsize{13}{15}\selectfont\bfseries\centering} % Section font size and style
-  {}
-  {0em}
-  {}
 
-\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+%section titles and lines
+\newcommand{\dashedtext}[1]{%
+  \vspace{0.35em}
+  \noindent
+  \makebox[\textwidth][c]{%
+    \begingroup\color{linegrey}\hrulefill\endgroup\quad
+    \raisebox{-0.6ex}{
+    {\color{section}\headingfont\fontsize{11}{15}\selectfont\bfseries #1}%
+    }
+    \quad\begingroup\color{linegrey}\hrulefill\endgroup
+  }%
+  \par\vspace{-\parskip}\vspace{1em}
+}
+
+
 
 % Remove indentation
 \setlength{\parindent}{0pt}
 
+
+
 \begin{document}
+
+\color{generaltext} % <-- This sets the default color for all text
 
 % Header
 \begin{center}
-    {\fontsize{22}{24}\selectfont\textbf{Subhrasmit Kar}} \par
+    {\fontsize{24}{24}\headingfont\textbf{\textcolor{title}{Subhrasmit Kar}}} \par
     
     \vspace{-0.3em}
     
@@ -71,20 +102,8 @@
 
 
 % Summary
-\section*{Summary}
-Computer Science engineer skilled in C, Java, SQL, and full-stack web development. Experienced in cybersecurity and encryption model development, with hands-on expertise in deploying web applications using Spring Boot, Maven, Docker, and Render. Equipped with robust coding and problem-solving abilities, reinforced by real-world projects and continuous self-learning. Passionate about leading teams and solving complex technical challenges.
-
-
-
-
-
-
-% Technical Skills
-\section*{Technical Skills}
-\textbf{Programming Languages:} C, Java, SQL, C++, HTML, CSS, JavaScript, LaTeX \\[0.5em]
-\textbf{Tools \& Technologies:} Git, VS Code, MySQL, IntelliJ IDEA, Postman, Spring Boot, Maven, Docker, Overleaf, OOP, DSA \\[0.5em]
-\textbf{Cybersecurity \& Cryptography:} Image Encryption Methodology, Bit-Plane Slicing, DNA Coding, Chaos Theory \\[0.5em]
-\textbf{Soft Skills:} Leadership, Problem-solving, Time Management, Communication, Adaptability, Fast Learner, Ethics
+\dashedtext{SUMMARY}
+Computer Science graduate with a strong foundation in cybersecurity, cryptography, and network security. Experienced in image encryption model development and full-stack web application deployment. Eager to further deepen my knowledge in cybersecurity.
 
 
 
@@ -92,8 +111,8 @@ Computer Science engineer skilled in C, Java, SQL, and full-stack web developmen
 
 
 % Education
-\section*{Education}
-\textbf{Bachelor of Technology (2021 - 2025)} \hfill {\textbf{CGPA: 7.95}} \\
+\dashedtext{EDUCATION}
+\textbf{Bachelor of Technology (2021 - 2025)} \hfill {\textbf{CGPA: 7.93}} \\
 Computer Science \& Engineering \hfill Hooghly Engineering and Technology College %\\
 %\makebox[\linewidth][r]{MAKAUT University}
 
@@ -113,19 +132,18 @@ Secondary Education \hfill Don Bosco School Bandel
 
 
 % Projects
-\section*{Projects}
-\textbf{Image Encryption using Bit-Plane Slicing \& DNA Encoding} \hfill {\textbf{September 2024 - May 2025}}\\[0.5em]
-\textbf{Technologies Used:} Java, Cryptography, Bit-Plane Slicing, DNA Encoding, Chaos Theory\hfill {\href{https://github.com/subhrasmit17/Image-Encryption-Offline}{GitHub}}
+\dashedtext{PROJECTS}
+\textbf{Image Encryption using Bit-Plane Slicing \& DNA-Based Encoding} \hfill {\textbf{September 2024 - Present}}\\[0.5em]
+\textbf{Technologies Used:} Java, Cryptography, Bit-Plane Slicing, DNA-Based Encoding\hfill {\href{https://github.com/subhrasmit17/Image-Encryption-Offline}{GitHub}}
 
 \begin{itemize}[leftmargin=*]
-    \item Led the design and implementation of a symmetric image encryption/decryption scheme ensuring secure and reversible image transformation.
-    \item Designed a multistage encryption pipeline leveraging chaotic maps, DNA-based coding, and bit-plane slicing to maximize confusion and diffusion in image data.
-    \item Engineered a symmetric decryption process to precisely reverse each encryption step, ensuring lossless recovery of the original image.
-    \item Achieved strong security performance with NPCR (99.62\%), UACI (34.58\%), and favorable PSNR, validating the scheme's robustness for secure image storage and transmission.
+    \item Led a team of four in developing a symmetric, multi-layer encryption-decryption pipeline integrating pixel scrambling, bit-plane slicing, and DNA-based coding to maximize security, while ensuring lossless image recovery.
+    \item Validated encryption robustness with NPCR (99.62\%), UACI (34.58\%), and strong PSNR metrics.
+    \item Currently enhancing the system by integrating chaos theory (logistic map) to further improve randomness and security.
 \end{itemize}
 
 
-\vspace{0.5em}
+\vspace{1.2em}
 
 
 \textbf{Image Encryption Web Application} \hfill {\textbf{June 2025 - Present}}\\[0.5em]
@@ -133,10 +151,9 @@ Secondary Education \hfill Don Bosco School Bandel
 Live Website: \href{https://image-encryptor-online.onrender.com}{https://image-encryptor-online.onrender.com}
 
 \begin{itemize}[leftmargin=*]
-    \item Independently built a live web application implementing the image encryption/decryption algorithm from my previous project, enabling real-time secure image processing via a web interface.
-    \item Built a Spring Boot backend for efficient image handling, integrated with a responsive front-end using HTML, CSS, and JavaScript for a seamless user experience.
-    \item Deployed the containerized application on Render using Docker, ensuring global accessibility with minimal cold start delays and optimized application responsiveness.
-    \item Achieved continuous deployment via GitHub-integrated auto-deploy, enabling automated updates to the web application on every code push.
+    \item Independently developed a web app implementing the image encryption/decryption algorithm from my previous project for real-time secure image processing.
+    \item Built a Spring Boot backend for running the algorithm, integrated with a  front-end for image upload, key entry, and output image download.
+    \item Deployed the containerized application on Render using Docker with GitHub-integrated continuous deployment, ensuring global accessibility and auto-deployment on every code push.
 \end{itemize}
 
 
@@ -145,13 +162,13 @@ Live Website: \href{https://image-encryptor-online.onrender.com}{https://image-e
 
 
 % Internships/Training
-\section*{Internships / Training}
+\dashedtext{INTERNSHIPS / TRAINING}
 \vspace{0.1em}
-\textbf{Rifle Factory Ishapore, Advanced Weapon and Equipment India Limited} \hfill {\textbf{January 2025}}\\[-1.4em]
+\textbf{Rifle Factory Ishapore, Advanced Weapons and Equipment India Limited} \hfill {\textbf{January 2025}}\\[-1.4em]
 
 \begin{itemize}[leftmargin=*]
-    \item Completed a two-week cybersecurity training on vulnerability identification, network security, and cryptography, learning how to strengthen an organization’s security frameworks.
-    \item Acquired practical knowledge of Information Security Protocols, Human Resource Security, Asset Management, Physical Security, and Incident Response.
+    \item Completed a two-week cybersecurity training focused on Vulnerability Assessment, Network Security, and Asset Management, learning how to strengthen an organization’s security posture.
+    \item Acquired practical knowledge of Information Security Controls, Identity and Access Management, Incident Response, and Security Audits.
 \end{itemize}
 
 
@@ -160,25 +177,30 @@ Live Website: \href{https://image-encryptor-online.onrender.com}{https://image-e
 
 
 % Certifications
-% \section*{Certifications}
-% \begin{itemize}[leftmargin=*]
-%     \item The Joy of Computing Using Python \textbf{(NPTEL)}
-%     \item Problem Solving Through Programming in C \textbf{(NPTEL)}
-%     \item Database Management System \textbf{(Great Learning Academy)}
-%     \item Programming for Everybody (Getting Started With Python) \textbf{(Coursera)}
-% \end{itemize}
+\dashedtext{CERTIFICATIONS}
+\begin{itemize}[leftmargin=*, itemsep=0pt]
+     \item Google Cybersecurity Professional Certificate - Coursera \hfill {November 2025}
+     \item IELTS - Band 8.5 \hfill {September 2025}
+ \end{itemize}
 
 
+
+
+% Technical Skills
+\dashedtext{TECHNICAL SKILLS}
+\textbf{Programming Languages:} C, C++, Java, Python, SQL, HTML, CSS, JavaScript, LaTeX \\[0.8em]
+\textbf{Cryptography:} Image Encryption Methodology, Bit-Plane Slicing, DNA-Based Encoding \\[0.8em]
+\textbf{Cybersecurity (Foundational):} Linux, Bash, SIEM Tools (Splunk), IDS/IPS (Suricata), Packet Analyzers (tcpdump, Wireshark), Network Security, Threat and Vulnerability Assessment, Risk Management, Security Frameworks (NIST CSF, NIST RMF), Incident Response
 
 
 
 
 % Languages
-\section*{Languages}
+\dashedtext{LANGUAGES}
 
 \begin{center}
-    \begin{tabular}{c @{\hspace{6em}} c @{\hspace{6em}} c} % Use 'c' for centering each column
-        English (Fluent) & Hindi (Proficient) & Bengali (Native)
+    \begin{tabular}{c @{\hspace{6em}} c @{\hspace{6em}} c @{\hspace{6em}} c}
+        English (CEFR C1) & Deutsch (Beginner) & Hindi (Fluent) & Bengali (Native)
     \end{tabular}
 \end{center}
 
